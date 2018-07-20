@@ -1,5 +1,7 @@
 package Settings;
 
+import Admin.UI.AdminButtons;
+import Client.UI.ClientButtons;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
@@ -9,6 +11,7 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
 
+    public String status="admin";
 
     public Bot(DefaultBotOptions botOptions) {
         super(botOptions);
@@ -24,6 +27,8 @@ public class Bot extends TelegramLongPollingBot {
             if (message!=null && message.hasText()) {
 
                 System.out.println((message.getChat().getUserName())+": "+"''"+(message.getText()+"''"));
+
+
 
                 if (message.getText().equals("/help")) {
                     get_command = true;
@@ -46,6 +51,14 @@ public class Bot extends TelegramLongPollingBot {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(message.getChatId().toString());
         sendMessage.setText(s);
+
+if(status.equals("client")){
+    ClientButtons clientButtons=new ClientButtons();
+    clientButtons.Client(sendMessage);
+} else if(status.equals("admin")){
+    AdminButtons adminButtons = new AdminButtons();
+    adminButtons.Admin(sendMessage);
+}
 
         try{
             sendMessage(sendMessage);
