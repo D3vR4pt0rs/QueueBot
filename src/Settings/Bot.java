@@ -2,6 +2,7 @@ package Settings;
 
 import Admin.UI.AdminButtons;
 import Client.UI.ClientButtons;
+import Employee.UI.EmployeeButtons;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
@@ -11,7 +12,7 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
 
-    public String status="admin";
+    public String status="employee";
 
     public Bot(DefaultBotOptions botOptions) {
         super(botOptions);
@@ -58,6 +59,9 @@ if(status.equals("client")){
 } else if(status.equals("admin")){
     AdminButtons adminButtons = new AdminButtons();
     adminButtons.Admin(sendMessage);
+} else if(status.equals("employee")){
+    EmployeeButtons employeeButtons= new EmployeeButtons();
+    employeeButtons.Employee(sendMessage);
 }
 
         try{
