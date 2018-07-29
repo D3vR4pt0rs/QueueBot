@@ -26,11 +26,13 @@ public class EmployeeButtons {
         keyboardFirstRow.add(new KeyboardButton("Открыто"));
         keyboardFirstRow.add(new KeyboardButton("Закрыто"));
 
-
+        keyboardSecondtRow.add(new KeyboardButton("Свободен"));
+        keyboardSecondRow.add(new KeyboardButton("Занят"));
 
 
 
         keyboard.add(keyboardFirstRow);
+        keyboard.add(keyboardSecondRow);
 
 
 
