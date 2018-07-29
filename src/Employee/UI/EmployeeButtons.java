@@ -26,6 +26,10 @@ public class EmployeeButtons {
         keyboardFirstRow.add(new KeyboardButton("Открыто"));
         keyboardFirstRow.add(new KeyboardButton("Закрыто"));
 
+        
+        
+        KeyboardRow keyboadSecondRow = new KeyboardRow();
+        
         keyboardSecondtRow.add(new KeyboardButton("Свободен"));
         keyboardSecondRow.add(new KeyboardButton("Занят"));
 
