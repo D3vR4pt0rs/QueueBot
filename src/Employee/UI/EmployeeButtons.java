@@ -28,7 +28,7 @@ public class EmployeeButtons {
 
         
         
-        KeyboardRow keyboadSecondRow = new KeyboardRow();
+        KeyboardRow keyboardSecondRow = new KeyboardRow();
         
         keyboardSecondRow.add(new KeyboardButton("Свободен"));
       
